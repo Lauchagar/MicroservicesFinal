@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Configuracion filtro y paginado</title>
+    </head>
+    <body>
+        <h1>Configuracion filtro y paginado</h1>
+        <form th:action="@{searchPagedResult}" method="get">
+            <label for="filter">Filtro:</label>
+            <input type="text" id="filter" name="filter" /><br>
+
+            <label for="page">Numero de pagina:</label>
+            <input type="number" id="page" name="page" value="0" /><br>
+
+            <label for="size">Tamaño de pagina:</label>
+            <input type="number" id="size" name="size" value="2"/><br>
+
+            <button type="submit">Aplicar</button>
+        </form>
+
+    </body>
+</html>

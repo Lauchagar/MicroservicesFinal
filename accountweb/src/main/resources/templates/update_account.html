@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+    <meta charset="UTF-8">
+    <title>Actualizar cliente</title>
+    </head>
+    <body>
+        <h1>Actualizar Cliente</h1>
+        <form action="#" th:action="@{${account.id}}" th:object="${account}" method="post">
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id" th:field="*{id}"><br>
+
+            <label for="cbu">CBU:</label>
+            <input type="text" id="cbu" name="cbu" th:field="*{cbu}"><br>
+            
+            <label for="banco">Banco:</label>
+            <input type="text" id="banco" name="banco" th:field="*{banco}"><br>
+
+            <label for="nombreTitular">Nombre del Titular:</label>
+            <input type="text" id="nombreTitular" name="nombreTitular" th:field="*{nombreTitular}"><br>
+
+
+            <button type="submit">Actualizar</button>
+        </form>
+    </body>
+</html>

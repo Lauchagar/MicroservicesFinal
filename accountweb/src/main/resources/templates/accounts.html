@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Cuentas</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <h1>Lista de Cuentas</h1>
+
+        <div th:if="${not #lists.isEmpty(accounts)}">
+            <table border="1">
+                <tr>
+                    <!--<th>ID</th>-->
+                    <th>CBU</th>
+                    <th>Nombre del Banco</th>
+                    <th>Nombre del Titular</th>
+                </tr>
+                <tr th:each="account : ${accounts}">
+                    <!--<td><span th:text="${account.id}"></span></td>-->
+                    <td><span th:text="${account.cbu}"></span></td>
+                    <td><span th:text="${account.banco}"></span></td>
+                    <td><span th:text="${account.nombreTitular}"></span></td>
+                </tr>
+            </table>
+        </div>
+
+        <div th:if="${#lists.isEmpty(accounts)}">
+            <p>No hay cuentas registradas.</p>
+        </div>
+        <a href="https://localhost:442/accounts/main">Inicio</a>
+    </body>
+</html>

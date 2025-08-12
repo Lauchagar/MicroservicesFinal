@@ -1,0 +1,587 @@
+{
+	"info": {
+		"_postman_id": "5ed3240c-e0a6-4280-8128-7e7bbce9934b",
+		"name": "Account-BFF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32367195"
+	},
+	"item": [
+		{
+			"name": "TokenLogin",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "bff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWlsQGVtYWlsLmNvbSIsImV4cCI6MTcxMTU0OTY3NywibmFtZSI6IkxhdXRhcm8ifQ.Bi1-q7HSndw0N8RK4ddA9Z50PQMZ6rQkhYNJDsLxZok",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"create@email.com\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:446/accounts/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "446",
+					"path": [
+						"accounts",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "bff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWlsQGVtYWlsLmNvbSIsImV4cCI6MTcxMTU0OTY3NywibmFtZSI6IkxhdXRhcm8ifQ.Bi1-q7HSndw0N8RK4ddA9Z50PQMZ6rQkhYNJDsLxZok",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Santiago\",\r\n  \"email\": \"user1@email.com\",\r\n  \"password\": \"123\",\r\n  \"roles\": [\r\n    {\r\n      \"name\": \"ROLE_USER\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:446/accounts/register?token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjcmVhdGVAZW1haWwuY29tIiwiZXhwIjoxNzEyMDg1NTYxLCJyb2xlcyI6WyJST0xFX0NSRUFURSIsIlJPTEVfVVNFUiJdLCJuYW1lIjoiUGVkcm8ifQ.wKNkKPm8Blw83kbT6E2GvksPvdj7_V9piueHxYQPveo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "446",
+					"path": [
+						"accounts",
+						"register"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjcmVhdGVAZW1haWwuY29tIiwiZXhwIjoxNzEyMDg1NTYxLCJyb2xlcyI6WyJST0xFX0NSRUFURSIsIlJPTEVfVVNFUiJdLCJuYW1lIjoiUGVkcm8ifQ.wKNkKPm8Blw83kbT6E2GvksPvdj7_V9piueHxYQPveo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Cuentas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "bff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWlsQGVtYWlsLmNvbSIsImV4cCI6MTcxMTU0OTY3NywibmFtZSI6IkxhdXRhcm8ifQ.Bi1-q7HSndw0N8RK4ddA9Z50PQMZ6rQkhYNJDsLxZok",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:446/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "446",
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Cuenta por ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "bff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWlsQGVtYWlsLmNvbSIsImV4cCI6MTcxMTU0OTY3NywibmFtZSI6IkxhdXRhcm8ifQ.Bi1-q7HSndw0N8RK4ddA9Z50PQMZ6rQkhYNJDsLxZok",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:446/accounts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "446",
+					"path": [
+						"accounts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Account",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "bff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWlsQGVtYWlsLmNvbSIsImV4cCI6MTcxMTU0OTY3NywibmFtZSI6IkxhdXRhcm8ifQ.Bi1-q7HSndw0N8RK4ddA9Z50PQMZ6rQkhYNJDsLxZok",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cbu\":\"21745217\",\r\n    \"banco\":\"BBVA\",\r\n    \"nombreTitular\":\"Lautaro Coria\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:446/accounts?token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjcmVhdGVAZW1haWwuY29tIiwiZXhwIjoxNzEyMDEyNjE5LCJyb2xlcyI6WyJST0xFX1VTRVIiLCJST0xFX0NSRUFURSJdLCJuYW1lIjoiUGVkcm8ifQ.MnowLrQDFuchJMSpBrzuJIO-2UGsEJqHQcfZWbVuW-A",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "446",
+					"path": [
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjcmVhdGVAZW1haWwuY29tIiwiZXhwIjoxNzEyMDEyNjE5LCJyb2xlcyI6WyJST0xFX1VTRVIiLCJST0xFX0NSRUFURSJdLCJuYW1lIjoiUGVkcm8ifQ.MnowLrQDFuchJMSpBrzuJIO-2UGsEJqHQcfZWbVuW-A"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "bff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWlsQGVtYWlsLmNvbSIsImV4cCI6MTcxMTU0OTY3NywibmFtZSI6IkxhdXRhcm8ifQ.Bi1-q7HSndw0N8RK4ddA9Z50PQMZ6rQkhYNJDsLxZok",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:446/accounts/2?token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjcmVhdGVAZW1haWwuY29tIiwiZXhwIjoxNzEyMDg1NTYxLCJyb2xlcyI6WyJST0xFX0NSRUFURSIsIlJPTEVfVVNFUiJdLCJuYW1lIjoiUGVkcm8ifQ.wKNkKPm8Blw83kbT6E2GvksPvdj7_V9piueHxYQPveo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "446",
+					"path": [
+						"accounts",
+						"2"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjcmVhdGVAZW1haWwuY29tIiwiZXhwIjoxNzEyMDg1NTYxLCJyb2xlcyI6WyJST0xFX0NSRUFURSIsIlJPTEVfVVNFUiJdLCJuYW1lIjoiUGVkcm8ifQ.wKNkKPm8Blw83kbT6E2GvksPvdj7_V9piueHxYQPveo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "bff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWlsQGVtYWlsLmNvbSIsImV4cCI6MTcxMTU0OTY3NywibmFtZSI6IkxhdXRhcm8ifQ.Bi1-q7HSndw0N8RK4ddA9Z50PQMZ6rQkhYNJDsLxZok",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"cbu\":\"2864181\",\r\n    \"banco\":\"Provincia\",\r\n    \"nombreTitular\":\"Lautaro Coria\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:446/accounts/1?token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWlsQGVtYWlsLmNvbSIsImV4cCI6MTcxMjAyMTE3NCwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJuYW1lIjoiTGF1dGFybyJ9.Bl_nC1W56kMBTIIkLjkLnuXj38SNHDPZOFFto6gF5sI",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "446",
+					"path": [
+						"accounts",
+						"1"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWlsQGVtYWlsLmNvbSIsImV4cCI6MTcxMjAyMTE3NCwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJuYW1lIjoiTGF1dGFybyJ9.Bl_nC1W56kMBTIIkLjkLnuXj38SNHDPZOFFto6gF5sI"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Cuentas por filtro",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "bff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWlsQGVtYWlsLmNvbSIsImV4cCI6MTcxMTU0OTY3NywibmFtZSI6IkxhdXRhcm8ifQ.Bi1-q7HSndw0N8RK4ddA9Z50PQMZ6rQkhYNJDsLxZok",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:446/accounts/search?filter=lautaro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "446",
+					"path": [
+						"accounts",
+						"search"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "lautaro"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Cuentas paginado",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "bff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWlsQGVtYWlsLmNvbSIsImV4cCI6MTcxMTU0OTY3NywibmFtZSI6IkxhdXRhcm8ifQ.Bi1-q7HSndw0N8RK4ddA9Z50PQMZ6rQkhYNJDsLxZok",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:446/accounts/paged?page=0&size=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "446",
+					"path": [
+						"accounts",
+						"paged"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Cuentas por filtro paginado",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "bff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWlsQGVtYWlsLmNvbSIsImV4cCI6MTcxMTU0OTY3NywibmFtZSI6IkxhdXRhcm8ifQ.Bi1-q7HSndw0N8RK4ddA9Z50PQMZ6rQkhYNJDsLxZok",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:446/accounts/searchPaged?filter=lautaro&page=0&size=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "446",
+					"path": [
+						"accounts",
+						"searchPaged"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "lautaro"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

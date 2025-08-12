@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Filtro</title>
+    </head>
+    <body>
+        <h1>Filtro</h1>
+        <form th:action="@{searchResult}" method="get">
+            
+            <label for="filter">Filtro:</label>
+            <input type="text" id="filter" name="filter" /><br>
+
+            <button type="submit">Buscar</button>
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Response</title>
+</head>
+<body>
+    <h1>Page Response</h1>
+    
+    <h2>Lista de cuentas:</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <!--<th>ID</th>-->
+                <th>CBU</th>
+                <th>Nombre del Banco</th>
+                <th>Nombre del Titular</th>
+            </tr>
+        </thead>
+            <tr th:each="account : ${paged.content}">
+                <!--<td th:text="${account.id}"></td>-->
+                <td><span th:text="${account.cbu}"></span></td>
+                <td><span th:text="${account.banco}"></span></td>
+                <td><span th:text="${account.nombreTitular}"></span></td>
+            </tr>
+    </table>
+    
+    <div>
+        <h2>Info del paginado:</h2>
+        <p>Pagina numero:<span th:text="${paged.pageable.pageNumber}"></span></p>
+        <p>Paginas totales: <span th:text="${paged.totalPages}"></span></p>
+        <p>Tamaño de la paginas: <span th:text="${paged.pageable.pageSize}"></span></p>
+    </div>
+    
+    <div th:if="${#lists.isEmpty(paged.content)}">
+    <p>No hay cuentas registradas.</p>
+    </div>
+</body>
+</html>

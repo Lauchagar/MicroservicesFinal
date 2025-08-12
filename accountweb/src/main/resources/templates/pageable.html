@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Configuracion paginado</title>
+    </head>
+    <body>
+        <h1>Configuracion paginado</h1>
+        <form th:action="@{pagedResult}" method="get">
+            
+            <label for="page">Numero de pagina:</label>
+            <input type="number" id="page" name="page" value='0'/><br>
+
+            <label for="size">Tamaño de pagina:</label>
+            <input type="number" id="size" name="size" value='2'/><br>
+            
+            <button type="submit">Aplicar</button>
+        </form>
+    </body>
+</html>
